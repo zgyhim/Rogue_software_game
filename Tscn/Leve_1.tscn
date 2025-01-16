@@ -1,0 +1,263 @@
+[gd_scene load_steps=15 format=3 uid="uid://dl8s60tsr2a1a"]
+
+[ext_resource type="Script" path="res://Tscn/ui.gd" id="1_uf6c3"]
+[ext_resource type="FontFile" uid="uid://c16omixv2fayp" path="res://QingNiaoHuaGuangJianMeiHei-2.ttf" id="1_v4b7g"]
+[ext_resource type="Texture2D" uid="uid://vemvjv3qajmu" path="res://Teto_SV.png" id="2_cqtkw"]
+[ext_resource type="Texture2D" uid="uid://cu32h4o0xoa5d" path="res://1154834040.jpg" id="4_gn2yn"]
+[ext_resource type="Theme" uid="uid://nq1i8lqvyo7h" path="res://Button2.tres" id="4_utqo8"]
+[ext_resource type="Theme" uid="uid://dkbhyfo3itpum" path="res://Main.tres" id="5_3tqn4"]
+[ext_resource type="Script" path="res://Tscn/end.gd" id="6_kknps"]
+[ext_resource type="Texture2D" uid="uid://b7xthmssxipsw" path="res://1154834048.jpg" id="6_rwjgk"]
+[ext_resource type="Texture2D" uid="uid://bc7ys8jnu5qc0" path="res://1154834044.jpg" id="7_aw5vd"]
+[ext_resource type="Texture2D" uid="uid://f5se4nsblpfo" path="res://1158632870.jpg" id="7_l8fgs"]
+[ext_resource type="Script" path="res://Tscn/003.gd" id="9_pwbbv"]
+
+[sub_resource type="Animation" id="Animation_hh4u2"]
+resource_name = "Loding"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 3, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(40, 40), Vector2(124, 40), Vector2(801, 40), Vector2(917, 40)]
+}
+
+[sub_resource type="Animation" id="Animation_hvx3u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, 40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pqe88"]
+_data = {
+"Loding": SubResource("Animation_hh4u2"),
+"RESET": SubResource("Animation_hvx3u")
+}
+
+[node name="Leve1" type="Node2D"]
+
+[node name="Bk" type="ColorRect" parent="."]
+offset_right = 1222.0
+offset_bottom = 728.0
+color = Color(0, 0.501961, 0.501961, 1)
+
+[node name="UI" type="Node" parent="."]
+script = ExtResource("1_uf6c3")
+
+[node name="UIBk" type="ColorRect" parent="UI"]
+offset_left = 76.0
+offset_top = 38.0
+offset_right = 1076.0
+offset_bottom = 602.0
+
+[node name="001" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 41.0
+
+[node name="Title" type="Label" parent="UI/001"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 72.0
+offset_right = 655.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_v4b7g")
+theme_override_font_sizes/font_size = 40
+text = "确定要卸载大鸟壁纸吗"
+
+[node name="PS" type="Label" parent="UI/001"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 165.0
+offset_right = 707.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.784314, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "电脑小助手贴心提示：大鸟壁纸有利于美化桌面哟！"
+
+[node name="TetoSv" type="Sprite2D" parent="UI/001"]
+position = Vector2(174.625, 370)
+scale = Vector2(0.135625, 0.141076)
+texture = ExtResource("2_cqtkw")
+
+[node name="DonU" type="Button" parent="UI/001"]
+layout_mode = 0
+offset_left = 857.0
+offset_top = 503.0
+offset_right = 1041.0
+offset_bottom = 584.0
+theme = ExtResource("4_utqo8")
+theme_override_font_sizes/font_size = 25
+text = "不卸载"
+
+[node name="001Next" type="Button" parent="UI/001"]
+layout_mode = 0
+offset_left = 983.0
+offset_top = 44.0
+offset_right = 1059.0
+offset_bottom = 84.0
+text = "卸载"
+
+[node name="002" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="1154834040" type="Sprite2D" parent="UI/002"]
+position = Vector2(274.5, 205.5)
+scale = Vector2(0.118132, 0.103889)
+texture = ExtResource("4_gn2yn")
+
+[node name="Label" type="Label" parent="UI/002"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 58.0
+offset_right = 151.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_v4b7g")
+theme_override_font_sizes/font_size = 40
+text = "各种精美壁纸在等你。。。"
+
+[node name="1154834044" type="Sprite2D" parent="UI/002"]
+position = Vector2(272, 406)
+scale = Vector2(0.123925, 0.112833)
+texture = ExtResource("7_aw5vd")
+
+[node name="1154834048" type="Sprite2D" parent="UI/002"]
+position = Vector2(607, 218)
+scale = Vector2(0.155054, 0.137917)
+texture = ExtResource("6_rwjgk")
+
+[node name="1158632870" type="Sprite2D" parent="UI/002"]
+position = Vector2(607.859, 408.758)
+scale = Vector2(0.0397768, 0.048337)
+texture = ExtResource("7_l8fgs")
+
+[node name="DonU" type="Button" parent="UI/002"]
+layout_mode = 0
+offset_left = 887.0
+offset_top = 499.0
+offset_right = 1032.0
+offset_bottom = 578.0
+theme = ExtResource("4_utqo8")
+text = "去看看"
+
+[node name="002Next" type="Button" parent="UI/002"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 540.0
+offset_right = 187.0
+offset_bottom = 593.0
+text = "不要了"
+
+[node name="003" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_pwbbv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/003"]
+libraries = {
+"": SubResource("AnimationLibrary_pqe88")
+}
+
+[node name="ColorRect" type="ColorRect" parent="UI/003/AnimationPlayer"]
+offset_left = 119.0
+offset_top = 505.0
+offset_right = 159.0
+offset_bottom = 545.0
+color = Color(0.541176, 0, 1, 1)
+
+[node name="Label" type="Label" parent="UI/003"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 210.0
+offset_right = 793.0
+offset_bottom = 347.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "卸载中"
+
+[node name="End" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("5_3tqn4")
+script = ExtResource("6_kknps")
+
+[node name="Label" type="Label" parent="UI/End"]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 250.0
+offset_right = 657.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "卸载失败"
+
+[node name="Button" type="Button" parent="UI/End"]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 313.0
+offset_right = 627.0
+offset_bottom = 375.0
+text = "确定"
+
+[node name="U" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI/U"]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 241.0
+offset_right = 868.0
+offset_bottom = 378.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "卸载成功"
+
+[node name="Button" type="Button" parent="UI/U"]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 305.0
+offset_right = 637.0
+offset_bottom = 377.0
+theme = ExtResource("5_3tqn4")
+text = "确定"
+
+[connection signal="button_down" from="UI/001/DonU" to="UI" method="_on_don_u_button_down"]
+[connection signal="button_down" from="UI/001/001Next" to="UI" method="_on_button_button_down"]
+[connection signal="button_down" from="UI/002/DonU" to="UI" method="_on_don_u_button_down"]
+[connection signal="button_down" from="UI/002/002Next" to="UI" method="_on_next_button_down"]
+[connection signal="animation_finished" from="UI/003/AnimationPlayer" to="UI" method="_on_animation_player_animation_finished"]
+[connection signal="animation_started" from="UI/003/AnimationPlayer" to="UI/003" method="_on_animation_player_animation_started"]
+[connection signal="draw" from="UI/End" to="UI/End" method="_on_draw"]
+[connection signal="button_down" from="UI/End/Button" to="UI/End" method="_on_button_button_down"]
+[connection signal="draw" from="UI/U" to="UI/End" method="_on_u_draw"]
+[connection signal="button_down" from="UI/U/Button" to="UI/End" method="_on_button_button_down"]
