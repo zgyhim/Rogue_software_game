@@ -10,10 +10,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func _draw() -> void:
+	$"../UIC".hide()
 
-func _on_leve_1_button_down() -> void:
-	get_tree().change_scene_to_file("res://Tscn/Leve_1.tscn")
+func _on_button_button_down() -> void:
+	get_tree().change_scene_to_file("res://level_selection.tscn")
 
 
-func _on_leve_2_button_down() -> void:
-	get_tree().change_scene_to_file("res://Leve2/Leve2.tscn")
+func _on_失败_draw() -> void:
+	$"../UIC".hide()

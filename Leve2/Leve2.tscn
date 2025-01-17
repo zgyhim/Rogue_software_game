@@ -1,0 +1,394 @@
+[gd_scene load_steps=15 format=3 uid="uid://jxp757muth73"]
+
+[ext_resource type="Script" path="res://Leve2/ui.gd" id="1_ym4ot"]
+[ext_resource type="FontFile" uid="uid://c16omixv2fayp" path="res://QingNiaoHuaGuangJianMeiHei-2.ttf" id="2_oe3is"]
+[ext_resource type="Theme" uid="uid://nq1i8lqvyo7h" path="res://Button2.tres" id="3_mcs77"]
+[ext_resource type="Texture2D" uid="uid://c4qoq00s8c4wk" path="res://屏幕截图_20250118_022151.png" id="4_1h4pk"]
+[ext_resource type="Script" path="res://Leve2/004.gd" id="5_55bdj"]
+[ext_resource type="Texture2D" uid="uid://da76ifoeiyy6q" path="res://xtdowner.com_13721.jpg" id="6_0mygd"]
+[ext_resource type="VideoStream" path="res://dddddddd.ogv" id="7_k3yjk"]
+[ext_resource type="Script" path="res://Leve2/loding_end.gd" id="8_cygo1"]
+[ext_resource type="Theme" uid="uid://dkbhyfo3itpum" path="res://Main.tres" id="8_rfcks"]
+[ext_resource type="Script" path="res://Leve2/成功.gd" id="9_y818y"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_5f6ok"]
+resource_local_to_scene = true
+
+[sub_resource type="Animation" id="Animation_5hykv"]
+resource_name = "Loding"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.16667, 11.3846, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(40, 40), Vector2(59, 40), Vector2(775, 40), Vector2(953, 40)]
+}
+
+[sub_resource type="Animation" id="Animation_wacry"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(59, 40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o5ggg"]
+_data = {
+"Loding": SubResource("Animation_5hykv"),
+"RESET": SubResource("Animation_wacry")
+}
+
+[node name="Leve2" type="Node2D"]
+
+[node name="BKC" type="ColorRect" parent="."]
+offset_right = 1173.0
+offset_bottom = 681.0
+color = Color(0, 0.501961, 0.501961, 1)
+
+[node name="ui" type="Node" parent="."]
+script = ExtResource("1_ym4ot")
+
+[node name="UIC" type="ColorRect" parent="ui"]
+offset_left = 39.0
+offset_top = 33.0
+offset_right = 1069.0
+offset_bottom = 594.0
+color = Color(0.164706, 0.45098, 1, 1)
+
+[node name="001" type="Control" parent="ui"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="ui/001"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 68.0
+offset_right = 541.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_oe3is")
+theme_override_font_sizes/font_size = 40
+text = "真的要    460安全卫士吗"
+
+[node name="Button" type="Button" parent="ui/001"]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 57.0
+offset_right = 286.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_oe3is")
+theme_override_font_sizes/font_size = 40
+text = "卸载"
+flat = true
+
+[node name="Label2" type="Label" parent="ui/001"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 152.0
+offset_right = 507.0
+offset_bottom = 194.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "警告：你的电脑正在失去防护！！"
+
+[node name="Label3" type="Label" parent="ui/001"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 209.0
+offset_right = 449.0
+offset_bottom = 411.0
+theme_override_colors/font_color = Color(0.478431, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "卸载后，
+朋友不小心下载的病毒，
+恶意的木马，
+勒索程序。。。。
+都可以攻击你"
+
+[node name="Button2" type="Button" parent="ui/001"]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 495.0
+offset_right = 1014.0
+offset_bottom = 564.0
+theme = ExtResource("3_mcs77")
+text = "不卸载"
+
+[node name="002" type="Control" parent="ui"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="ui/002"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 59.0
+offset_right = 240.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("2_oe3is")
+theme_override_font_sizes/font_size = 40
+text = "有问题吗"
+
+[node name="Label2" type="Label" parent="ui/002"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 148.0
+offset_right = 327.0
+offset_bottom = 211.0
+theme_override_font_sizes/font_size = 30
+text = "垃圾满了？"
+
+[node name="Button" type="Button" parent="ui/002"]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 141.0
+offset_right = 346.0
+offset_bottom = 190.0
+theme = ExtResource("3_mcs77")
+text = "一键清理"
+
+[node name="Label3" type="Label" parent="ui/002"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 228.0
+offset_right = 226.0
+offset_bottom = 271.0
+theme_override_font_sizes/font_size = 30
+text = "出bug了？"
+
+[node name="Button2" type="Button" parent="ui/002"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 218.0
+offset_right = 483.0
+offset_bottom = 274.0
+theme = ExtResource("3_mcs77")
+text = "客服小姐姐24h在线"
+
+[node name="Button3" type="Button" parent="ui/002"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 295.0
+offset_right = 349.0
+offset_bottom = 351.0
+theme = ExtResource("3_mcs77")
+text = "去除广告"
+
+[node name="Label4" type="Label" parent="ui/002"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 304.0
+offset_right = 237.0
+offset_bottom = 346.0
+theme_override_font_sizes/font_size = 30
+text = "广告太多？"
+
+[node name="Button4" type="Button" parent="ui/002"]
+layout_mode = 0
+offset_left = 1002.0
+offset_top = 554.0
+offset_right = 1056.0
+offset_bottom = 587.0
+text = "卸载"
+
+[node name="003" type="Control" parent="ui"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="屏幕截图20250118022151" type="Sprite2D" parent="ui/003"]
+position = Vector2(496, 366)
+scale = Vector2(0.804363, 0.803131)
+texture = ExtResource("4_1h4pk")
+
+[node name="Label" type="Label" parent="ui/003"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 52.0
+offset_right = 99.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("2_oe3is")
+theme_override_font_sizes/font_size = 40
+text = "真的要卸载吗"
+
+[node name="Label2" type="Label" parent="ui/003"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 124.0
+offset_right = 269.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 20
+text = "超多热门软件在等你。。。"
+
+[node name="Button" type="Button" parent="ui/003"]
+layout_mode = 0
+offset_left = 915.0
+offset_top = 522.0
+offset_right = 1050.0
+offset_bottom = 582.0
+theme = ExtResource("3_mcs77")
+text = "去看看"
+
+[node name="Button2" type="Button" parent="ui/003"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 410.0
+offset_right = 457.0
+offset_bottom = 437.0
+text = "狠心放弃"
+flat = true
+
+[node name="004" type="Control" parent="ui"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_55bdj")
+
+[node name="Label" type="Label" parent="ui/004"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 57.0
+offset_right = 98.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 40
+text = "真的要卸载吗"
+
+[node name="Button" type="Button" parent="ui/004"]
+layout_mode = 0
+offset_left = 883.0
+offset_top = 502.0
+offset_right = 1040.0
+offset_bottom = 577.0
+theme = ExtResource("3_mcs77")
+text = "继续陪着我"
+
+[node name="Label2" type="Label" parent="ui/004"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 135.0
+offset_right = 128.0
+offset_bottom = 158.0
+theme_override_font_sizes/font_size = 30
+text = "想起40天的点点滴滴 我还是有些不舍。。。"
+
+[node name="Xtdowner_com13721" type="Sprite2D" parent="ui/004"]
+position = Vector2(129, 542)
+scale = Vector2(0.125, 0.148167)
+texture = ExtResource("6_0mygd")
+
+[node name="Button2" type="Button" parent="ui/004"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 505.0
+offset_right = 192.0
+offset_bottom = 581.0
+text = "卸载"
+icon = SubResource("ImageTexture_5f6ok")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="ui/004"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 27.0
+offset_right = 1085.0
+offset_bottom = 631.0
+stream = ExtResource("7_k3yjk")
+
+[node name="LodingEnd" type="Control" parent="ui"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_cygo1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ui/LodingEnd"]
+libraries = {
+"": SubResource("AnimationLibrary_o5ggg")
+}
+
+[node name="ColorRect" type="ColorRect" parent="ui/LodingEnd/AnimationPlayer"]
+visible = false
+offset_left = 82.0
+offset_top = 499.0
+offset_right = 141.0
+offset_bottom = 539.0
+
+[node name="Label" type="Label" parent="ui/LodingEnd"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 186.0
+offset_right = 697.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 100
+text = "卸载中"
+
+[node name="成功" type="Control" parent="ui"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_y818y")
+
+[node name="Button" type="Button" parent="ui/成功"]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 311.0
+offset_right = 657.0
+offset_bottom = 381.0
+theme = ExtResource("8_rfcks")
+theme_override_font_sizes/font_size = 30
+text = "成功卸载"
+
+[node name="失败" type="Control" parent="ui"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="ui/失败"]
+visible = false
+layout_mode = 0
+offset_left = 443.0
+offset_top = 253.0
+offset_right = 700.0
+offset_bottom = 361.0
+theme = ExtResource("8_rfcks")
+theme_override_font_sizes/font_size = 30
+text = "卸载应用失败"
+
+[connection signal="button_down" from="ui/001/Button" to="ui" method="_on_button_2_button_down"]
+[connection signal="button_down" from="ui/001/Button2" to="ui" method="_on_button_button_down"]
+[connection signal="button_down" from="ui/002/Button" to="ui" method="_on_button_button_down"]
+[connection signal="button_down" from="ui/002/Button2" to="ui" method="_on_button_button_down"]
+[connection signal="button_down" from="ui/002/Button3" to="ui" method="_on_button_button_down"]
+[connection signal="button_down" from="ui/002/Button4" to="ui" method="_on_button_4_button_down"]
+[connection signal="button_down" from="ui/003/Button" to="ui" method="_on_button_button_down"]
+[connection signal="button_down" from="ui/003/Button2" to="ui" method="_on_button_3_button_down"]
+[connection signal="button_down" from="ui/004/Button" to="ui" method="_on_button_button_down"]
+[connection signal="button_down" from="ui/004/Button2" to="ui/004" method="_on_button_2_button_down"]
+[connection signal="finished" from="ui/004/VideoStreamPlayer" to="ui/004" method="_on_video_stream_player_finished"]
+[connection signal="animation_finished" from="ui/LodingEnd/AnimationPlayer" to="ui/LodingEnd" method="_on_animation_player_animation_finished"]
+[connection signal="button_down" from="ui/成功/Button" to="ui/成功" method="_on_button_button_down"]
+[connection signal="draw" from="ui/失败" to="ui/成功" method="_on_失败_draw"]
+[connection signal="button_down" from="ui/失败/Button" to="ui/成功" method="_on_button_button_down"]
