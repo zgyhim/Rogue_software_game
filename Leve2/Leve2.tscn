@@ -1,12 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://jxp757muth73"]
+[gd_scene load_steps=13 format=3 uid="uid://jxp757muth73"]
 
 [ext_resource type="Script" path="res://Leve2/ui.gd" id="1_ym4ot"]
 [ext_resource type="FontFile" uid="uid://c16omixv2fayp" path="res://QingNiaoHuaGuangJianMeiHei-2.ttf" id="2_oe3is"]
 [ext_resource type="Theme" uid="uid://nq1i8lqvyo7h" path="res://Button2.tres" id="3_mcs77"]
 [ext_resource type="Texture2D" uid="uid://c4qoq00s8c4wk" path="res://屏幕截图_20250118_022151.png" id="4_1h4pk"]
 [ext_resource type="Script" path="res://Leve2/004.gd" id="5_55bdj"]
-[ext_resource type="Texture2D" uid="uid://da76ifoeiyy6q" path="res://xtdowner.com_13721.jpg" id="6_0mygd"]
-[ext_resource type="VideoStream" path="res://dddddddd.ogv" id="7_k3yjk"]
 [ext_resource type="Script" path="res://Leve2/loding_end.gd" id="8_cygo1"]
 [ext_resource type="Theme" uid="uid://dkbhyfo3itpum" path="res://Main.tres" id="8_rfcks"]
 [ext_resource type="Script" path="res://Leve2/成功.gd" id="9_y818y"]
@@ -69,6 +67,7 @@ offset_bottom = 594.0
 color = Color(0.164706, 0.45098, 1, 1)
 
 [node name="001" type="Control" parent="ui"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -131,6 +130,7 @@ theme = ExtResource("3_mcs77")
 text = "不卸载"
 
 [node name="002" type="Control" parent="ui"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -209,6 +209,7 @@ offset_bottom = 587.0
 text = "卸载"
 
 [node name="003" type="Control" parent="ui"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -290,27 +291,14 @@ offset_bottom = 158.0
 theme_override_font_sizes/font_size = 30
 text = "想起40天的点点滴滴 我还是有些不舍。。。"
 
-[node name="Xtdowner_com13721" type="Sprite2D" parent="ui/004"]
-position = Vector2(129, 542)
-scale = Vector2(0.125, 0.148167)
-texture = ExtResource("6_0mygd")
-
 [node name="Button2" type="Button" parent="ui/004"]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 505.0
-offset_right = 192.0
-offset_bottom = 581.0
+offset_left = 1378.0
+offset_top = 220.0
+offset_right = 1506.0
+offset_bottom = 296.0
 text = "卸载"
 icon = SubResource("ImageTexture_5f6ok")
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="ui/004"]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 27.0
-offset_right = 1085.0
-offset_bottom = 631.0
-stream = ExtResource("7_k3yjk")
 
 [node name="LodingEnd" type="Control" parent="ui"]
 visible = false
@@ -387,7 +375,6 @@ text = "卸载应用失败"
 [connection signal="button_down" from="ui/003/Button2" to="ui" method="_on_button_3_button_down"]
 [connection signal="button_down" from="ui/004/Button" to="ui" method="_on_button_button_down"]
 [connection signal="button_down" from="ui/004/Button2" to="ui/004" method="_on_button_2_button_down"]
-[connection signal="finished" from="ui/004/VideoStreamPlayer" to="ui/004" method="_on_video_stream_player_finished"]
 [connection signal="animation_finished" from="ui/LodingEnd/AnimationPlayer" to="ui/LodingEnd" method="_on_animation_player_animation_finished"]
 [connection signal="button_down" from="ui/成功/Button" to="ui/成功" method="_on_button_button_down"]
 [connection signal="draw" from="ui/失败" to="ui/成功" method="_on_失败_draw"]

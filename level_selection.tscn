@@ -24,13 +24,31 @@ offset_right = 162.0
 offset_bottom = 103.0
 text = "→ Level 01️"
 
+[node name="Label" type="Label" parent="Level/Leve1"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 20.0
+offset_right = 240.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 30
+text = "难度：⭐"
+
 [node name="Leve2" type="Button" parent="Level"]
 layout_mode = 0
-offset_left = 184.0
-offset_top = 28.0
-offset_right = 315.0
-offset_bottom = 102.0
+offset_left = 29.0
+offset_top = 115.0
+offset_right = 160.0
+offset_bottom = 189.0
 text = "→Leve02"
+
+[node name="Label" type="Label" parent="Level/Leve2"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 16.0
+offset_right = 342.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 30
+text = "难度：⭐⭐⭐⭐⭐⭐"
 
 [connection signal="button_down" from="Level/Leve1" to="Level" method="_on_leve_1_button_down"]
 [connection signal="button_down" from="Level/Leve2" to="Level" method="_on_leve_2_button_down"]

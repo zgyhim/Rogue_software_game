@@ -7,8 +7,6 @@ func _draw() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
